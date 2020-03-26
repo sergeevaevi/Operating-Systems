@@ -3,34 +3,58 @@
 3) Редактор - CLion;
 grep - мощный файловый поисковик, который поставляется на каждом дистрибутиве Linux
 Ключ -C - поиск с окружением слова(строки выше и ниже)
+
 ![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/grepC.png)
+
 Ключ -с - поиск с подсчетом количества
 Ключ -w - поиск по слову целиком
 Ключ -l - список файлов содержащих искомое слово
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/keys.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/keys.png)
+
 . - вывод содержимого
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/grepALLout.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/grepALLout.png)
+
 
 4) Компиляция, отладка и выполнение, полезные флаги
 -c - компиляция программы и генерация машинного кода, без создания исполняемого файла
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/gccCnm.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/gccCnm.png)
+
 -S - компиляция и генерация кода ассемблера 
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/gccS.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/gccS.png)
+
 -o - задать имя исполняемого файла
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/gccO.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/gccO.png)
+
 -E - запуск только препроцессора - он содержит код из всех подключенных библиотек
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/gccE.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/gccE.png)
+
 -Wall - вывод всех ошибок и предупреждений
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/gccWall.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/gccWall.png)
+
 -g - отладочная информация для работы с отладчиком - файл с отладочными данными занимает больше места на диске
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/gccGless.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/gccGless.png)
+
 -O - контролирование уровня оптимизации
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/gccO1.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/gccO1.png)
+
 nm - выводится информацию о бинарных файлах
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/nm.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/nm.png)
+
 подключение библиотек 
 статические .a:
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/lib.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/lib.png)
+
 создать библиотеку из объектых файлов
 надо добавить к этому архиву индекс символов
 надо сообщить компилятору каталог, в котором они содержатся и список билиотек. 
@@ -39,17 +63,22 @@ nm - выводится информацию о бинарных файлах
 В нашем случае этот ключ будет выглядеть, как -lfs.
 
 динамические .so:
+
 ![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/blob/master/image/dynlib.png)
+
 использование специальной переменной среды LD_LIBRARY_PATH, в которой перечисляются все каталоги содержащие пользовательские динамические библиотеки
 генерируемый компилятором код должен быть независимым от адресов, такая возможность включается ключом -fPIC.
 Для того, чтобы создать динамическую библиотеку надо использовать ключ -shared.
 использование man для поиска необходимой библиотеки
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/mansin.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/mansin.png)
 связывание, например, math.h - с помощью ключа -lm
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/lm.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/lm.png)
 
 5) Пример отладки простой ошибочной программы
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/gccG.png)
+
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/gccG.png)
 
 4) Применение Makefile для автоматизации (синтаксис, использование правил и переменных)
 make — утилита предназначенная для автоматизации преобразования файлов из одной формы в другую. 
@@ -67,4 +96,4 @@ make — утилита предназначенная для автоматиз
 <VAR_NAME> = <value string>
 Для использования значения переменной ее следует разименовать при помощи конструкции $(<VAR_NAME>)
 
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/master/image/make.png)
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/make.png)
