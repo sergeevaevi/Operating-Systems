@@ -1,86 +1,86 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <unistd.h>
 
-int
-main(int argc, char *argv[])
-{
-    printf("hello world (pid:%d)\n", (int) getpid());
-    int rc = fork();
-    if (rc < 0) {
-        // fork failed; exit
-        fprintf(stderr, "fork failed\n");
-        exit(1);
-    } else if (rc == 0) {
-        // child (new process)
-        printf("hello, I am child (pid:%d)\n", (int) getpid());
-    } else {
-        // parent goes down this path (original process)
-        printf("hello, I am parent of %d (pid:%d)\n",
-	       rc, (int) getpid());
-    }
-    return 0;
-}
+	int
+	main(int argc, char *argv[])
+	{
+		printf("hello world (pid:%d)\n", (int) getpid());
+		int rc = fork();
+		if (rc < 0) {
+			// fork failed; exit
+			fprintf(stderr, "fork failed\n");
+			exit(1);
+		} else if (rc == 0) {
+			// child (new process)
+			printf("hello, I am child (pid:%d)\n", (int) getpid());
+		} else {	
+			// parent goes down this path (original process)
+			printf("hello, I am parent of %d (pid:%d)\n",
+			rc, (int) getpid());
+		}
+		return 0;
+	}
 В первую очередь мы входим в функцию main() и выполняем вывод строки на экран. Строка содержит идентификатор процесса который называется PID. Следующей командой будет выполнен вызов fork(). В этот момент создается практически точная копия процесса. Вновь созданные процесс-потомок (по отношению к создавшему его процессу-родителю) уже не будет выполняться, начиная с функции main(). Следует помнить, что процесс-потомок не является точной копией процесса-родителя, в частности у него есть собственное адресное пространство, собственные регистры, свой указатель на исполняемые инструкции и тому подобное. Таким образом, значение, возвращаемое вызывателю функции fork() будет разным. В частности, процесс-родитель получит в качестве возврата значение PID процесса ребенка, а ребенок получит значение равное 0. По этим кодам возврата в дальнейшем уже можно разделять процессы и заставлять каждый из них выполнять свою работу. При этом выполнение данной программы не определено строго.
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/wait.h>
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <unistd.h>
+	#include <sys/wait.h>
 
-int
-main(int argc, char *argv[])
-{
-    printf("hello world (pid:%d)\n", (int) getpid());
-    int rc = fork();
-    if (rc < 0) {
-        // fork failed; exit
-        fprintf(stderr, "fork failed\n");
-        exit(1);
-    } else if (rc == 0) {
-        // child (new process)
-        printf("hello, I am child (pid:%d)\n", (int) getpid());
-	sleep(1);
-    } else {
-        // parent goes down this path (original process)
-        int wc = wait(NULL);
-        printf("hello, I am parent of %d (wc:%d) (pid:%d)\n",
-	       rc, wc, (int) getpid());
-    }
-    return 0;
-}
+	int
+	main(int argc, char *argv[])
+	{
+	    printf("hello world (pid:%d)\n", (int) getpid());
+	    int rc = fork();
+	    if (rc < 0) {
+		// fork failed; exit
+		fprintf(stderr, "fork failed\n");
+		exit(1);
+	    } else if (rc == 0) {
+		// child (new process)
+		printf("hello, I am child (pid:%d)\n", (int) getpid());
+		sleep(1);
+	    } else {
+		// parent goes down this path (original process)
+		int wc = wait(NULL);
+		printf("hello, I am parent of %d (wc:%d) (pid:%d)\n",
+		       rc, wc, (int) getpid());
+	    }
+	    return 0;
+	}
 За счет наличия вызова wait() процесс-родитель всегда будет дожидаться завершения работы процесса-потомка. В этом случае мы получим строго определенный вывод текста на экран.
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
-#include <sys/wait.h>
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <unistd.h>
+	#include <string.h>
+	#include <sys/wait.h>
 
-int
-main(int argc, char *argv[])
-{
-    printf("hello world (pid:%d)\n", (int) getpid());
-    int rc = fork();
-    if (rc < 0) {
-        // fork failed; exit
-        fprintf(stderr, "fork failed\n");
-        exit(1);
-    } else if (rc == 0) {
-        // child (new process)
-        printf("hello, I am child (pid:%d)\n", (int) getpid());
-        char *myargs[3];
-        myargs[0] = strdup("wc");   // program: "wc" (word count)
-        myargs[1] = strdup("p3.c"); // argument: file to count
-        myargs[2] = NULL;           // marks end of array
-        execvp(myargs[0], myargs);  // runs word count
-        printf("this shouldn't print out");
-    } else {
-        // parent goes down this path (original process)
-        int wc = wait(NULL);
-        printf("hello, I am parent of %d (wc:%d) (pid:%d)\n",
-	       rc, wc, (int) getpid());
-    }
-    return 0;
-}
+	int
+	main(int argc, char *argv[])
+	{
+	    printf("hello world (pid:%d)\n", (int) getpid());
+	    int rc = fork();
+	    if (rc < 0) {
+		// fork failed; exit
+		fprintf(stderr, "fork failed\n");
+		exit(1);
+	    } else if (rc == 0) {
+		// child (new process)
+		printf("hello, I am child (pid:%d)\n", (int) getpid());
+		char *myargs[3];
+		myargs[0] = strdup("wc");   // program: "wc" (word count)
+		myargs[1] = strdup("p3.c"); // argument: file to count
+		myargs[2] = NULL;           // marks end of array
+		execvp(myargs[0], myargs);  // runs word count
+		printf("this shouldn't print out");
+	    } else {
+		// parent goes down this path (original process)
+		int wc = wait(NULL);
+		printf("hello, I am parent of %d (wc:%d) (pid:%d)\n",
+		       rc, wc, (int) getpid());
+	    }
+	    return 0;
+	}
 Системный вызов exec() полезен, когда мы хотим запустить совершенно другую программу. Здесь мы будем вызывать execvp() для запуска программы wc. Вызову передаются в качестве аргументов имя исполняемого файла и некоторые параметры. После чего происходит загрузка кода и статических данных из этого исполняемого файла и перезатирание собственного сегмента с кодом. Остальные участки памяти, такие как стек и куча переинициализируются. После чего ОС просто исполняет программу, передавая ей набор аргументов. Таким образом, не создавали новый процесс, просто трансформируется текущая запущенная программа в другую запущенную программу.
 
 Unix pipe реализованы похожим образом, с разницей, что они используют вызов pipe(). В этом случае поток вывода процесса будет подключен к очереди pipe, расположенной в ядре к которой же будет присоединен поток ввода другого процесса.
