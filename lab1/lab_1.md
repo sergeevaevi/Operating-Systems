@@ -1,7 +1,7 @@
 1) Установка Linux - Ubuntu
 
 3) Редактор - CLion;
-grep - мощный файловый поисковик, который поставляется на каждом дистрибутиве Linux
+grep - мощный файловый поисковик, который поставляется на каждом дистрибутиве Linux.
 Ключ -C - поиск с окружением слова(строки выше и ниже)
 
 ![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/grepC.png)
@@ -19,7 +19,8 @@ grep - мощный файловый поисковик, который пост
 ![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/grepALLout.png)
 
 
-4) Компиляция, отладка и выполнение, полезные флаги
+4) Компиляция, отладка и выполнение, полезные флаги.
+
 -c - компиляция программы и генерация машинного кода, без создания исполняемого файла
 
 ![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/gccCnm.png)
