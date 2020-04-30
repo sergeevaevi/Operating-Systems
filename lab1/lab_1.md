@@ -2,6 +2,7 @@
 
 3) Редактор - CLion;
 grep - мощный файловый поисковик, который поставляется на каждом дистрибутиве Linux.
+
 Ключ -C - поиск с окружением слова(строки выше и ниже)
 
 ![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/grepC.png)
