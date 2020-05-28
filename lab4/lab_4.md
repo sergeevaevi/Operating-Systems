@@ -132,7 +132,7 @@ Valgrind хорошо известен как мощное средство по
 Указывает, что Valgrind должен отправлять все свои сообщения в указанный файл.
 Вывод файла находится в файле. Ошибка в файле:
 
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/null_gdb.png)
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/valgrid.png)
 
 Ошибка, когда адрес 0x0 не является стековым, malloc'd или (недавно) free'd и это часто означает разыменование NULL-указателя, что и просходит в программе. 
 
