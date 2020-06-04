@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/llen/CLionProjects/myfind/main.c
+stdio.h
+-
+unistd.h
+-
+sys/param.h
+-
+dirent.h
+-
+sys/stat.h
+-
+string.h
+-
+
