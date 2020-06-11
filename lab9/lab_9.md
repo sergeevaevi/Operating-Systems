@@ -4,7 +4,7 @@
 
 - lab8_1
 
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/2task8lab.png)
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/2task_8lab.png)
 
 Это довольно много деталей для простой ошибки. Последнее предложение является основным сообщением об ошибке. 
 В нем говорится о гонке в результате чтения размером 4 (байта), который является адресом balance.
@@ -44,7 +44,7 @@ Helgrind контролирует порядок, в котором потоки
 4. Также использовать helgrind для main-deadlock-global.c и проанализировать отчет, сравнить с предыдущим.
 
 
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/4task8lab.png)
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/4tasklab8.png)
 
 Однако в настоящее время Helgrind не показывает задействованные блокировки, иногда потому, что эта информация недоступна,
 но также во избежание затопления информацией. Поэтому в данном случе он ошибается.
