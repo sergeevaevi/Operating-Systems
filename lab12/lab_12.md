@@ -38,7 +38,7 @@ Cache Information
 	Socket Designation: L3 Cache
 	Maximum Size: 12288 kB
 
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/MYM_SYS.png)
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/MY_SYS.png)
 
 И информация с сайта производителя, которая незначительно отличается от полученных значений выше:
 
