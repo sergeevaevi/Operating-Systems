@@ -11,7 +11,7 @@
 Для этого 
 1. постройте графики времени доступа как функции длины массива, шага выборки и размера буфера. 
 
-![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/data_graph.png)
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/graph_data.png)
 
 2. на их основе сформулируйте обоснованные гипотезы о  размере кэша, размере блока, наличию кэша более высокого уровня. 
 
