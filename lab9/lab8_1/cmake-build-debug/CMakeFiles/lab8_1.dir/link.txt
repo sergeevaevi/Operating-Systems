@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/lab8_1.dir/main.c.o  -o lab8_1  -lpthread 
