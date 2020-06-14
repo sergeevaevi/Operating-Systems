@@ -1,0 +1,40 @@
+song.txt
+XOR-checksum: 91 	 for time 0.001961
+fletcher-checksum: 60390 	 for time 0.001945
+CRC-checksum: 22308 0x5724 	 for time  0.001021
+another_song.txt
+XOR-checksum: 92 	 for time 0.000087
+fletcher-checksum: 27532 	 for time 0.000085
+CRC-checksum: 2216 0x8A8 	 for time  0.000113
+and_other.txt
+XOR-checksum: 161 	 for time 0.003952
+fletcher-checksum: 1748 	 for time 0.003889
+CRC-checksum: 16908 0x420C 	 for time  0.005702
+and_other.txt
+XOR-checksum: 161 	 for time 0.003886
+fletcher-checksum: 1748 	 for time 0.004297
+CRC-checksum: 16908 0x420C 	 for time  0.005165
+two.txt
+XOR-checksum: 7 	 for time 0.002459
+fletcher-checksum: 53107 	 for time 0.002506
+CRC-checksum: 22168 0x5698 	 for time  0.003243
+three.txt
+XOR-checksum: 166 	 for time 0.006267
+fletcher-checksum: 22600 	 for time 0.006322
+CRC-checksum: 21382 0x5386 	 for time  0.008514
+wiki1.txt
+XOR-checksum: 49 	 for time 0.000023
+fletcher-checksum: 51440 	 for time 0.000017
+CRC-checksum: 53039 0xCF2F 	 for time  0.000023
+wiki2.txt
+XOR-checksum: 7 	 for time 0.000026
+fletcher-checksum: 8279 	 for time 0.000019
+CRC-checksum: 3011 0xBC3 	 for time  0.000026
+wiki3.txt
+XOR-checksum: 8 	 for time 0.000030
+fletcher-checksum: 1575 	 for time 0.000024
+CRC-checksum: 19142 0x4AC6 	 for time  0.000032
+tired.txt
+XOR-checksum: 76 	 for time 0.000053
+fletcher-checksum: 10695 	 for time 0.000047
+CRC-checksum: 35108 0x8924 	 for time  0.000065
