@@ -12,7 +12,7 @@ next_out одновременно
 (перейти в состояние Blocked), когда очередь пополнится. 
 
 
-[Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/exmpl1.png)
+![Иллюстрация](https://github.com/sergeevaevi/Operating-Systems/raw/master/image/exmpl1.png)
 
 
 например один поток хочет извлечь 10 запись, когда первый добавил только 8.
